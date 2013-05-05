@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  <title>Ruby on Rails Tutorial Sample App | <%= @title %></title>
-		  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <title><%= title %></title>
+		  <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+		  <link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'>
+		  <%= stylesheet_link_tag "application", :media => "all" %>
+		  <%= stylesheet_link_tag "cardstyle", :media => "all" %>
+		  <%= stylesheet_link_tag "printstyle", :media => "print" %>
 		  <%= javascript_include_tag "application" %>
 		  <%= csrf_meta_tags %>
     </head>
 		<body>
+			<div class="container">
+				<div class="nav">
+					<h1 class="nav-title">Lend to Friends</h1>
+					
+						<ul class="tabrow">
+					    <li><a href="/">Add to Library</a></li>
+					    <li><a href="/library">Library</a></li>
+					    <li><a href="/checked_out">Checked out</a></li>
+					   </ul>	 
+				</div>
 
-		  <%= yield %>
-
+		        <%= yield %>
+	          <footer><p>Lend to Friends</p></footer>
+	        </div>
 		</body>
 </html>
